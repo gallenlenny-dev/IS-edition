@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maison d'édition Marseille">
+  <title>IS EDITION — Accueil</title>
+  <link rel="icon" type="image/png" href="icon/is-edition-favicon-114x114.ico">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Styles spécifiques à la page d'accueil */
+    .home-hero {
+      padding-block: var(--space-24) var(--space-16);
+      text-align: center;
+      max-width: 680px;
+      margin-inline: auto;
+    }
+ 
+    .home-hero h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: var(--font-bold);
+      color: var(--color-text-primary);
+      letter-spacing: var(--tracking-tight);
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-6);
+    }
+ 
+    .home-hero h1 em {
+      color: var(--color-accent-blue);
+      font-style: italic;
+    }
+ 
+    .home-hero p {
+      font-size: var(--text-md);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-8);
+    }
+ 
+    .home-ctas {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+ 
+    .home-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-accent-blue), var(--color-accent-orange));
+      border-radius: var(--radius-full);
+      margin-inline: auto;
+      margin-block: var(--space-12);
+    }
+ 
+    /* ── QUI SOMMES-NOUS ── */
+    .section-about {
+      display: flex;
+      gap: var(--space-16);
+      align-items: center;
+      padding-block: var(--space-16);
+    }
+ 
+    .about-label {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-accent-orange);
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+ 
+    .about-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--color-text-primary);
+      letter-spacing: var(--tracking-tight);
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-6);
+    }
+ 
+    .about-title span {
+      color: var(--color-accent-blue);
+    }
+ 
+    .about-text {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+ 
+    .about-text p + p {
+      margin-top: var(--space-4);
+    }
+ 
+ 
+    @media (max-width: 768px) {
+      .section-about {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+      .about-title {
+        font-size: var(--text-xl);
+      }
+    }
+ 
+   /* ── CTA SECTION ── */
+    .home-cta-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+      padding-block: var(--space-16);
+    }
+
+    .cta-card {
+      border-radius: var(--radius-xl);
+      padding: var(--space-10);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+      justify-content: space-between;
+    }
+
+    .cta-card--blue {
+      background-color: var(--color-accent-blue);
+      color: var(--color-text-inverted);
+    }
+
+    .cta-card--dark {
+      background-color: var(--color-bg-dark);
+      color: var(--color-text-inverted);
+    }
+
+    .cta-eyebrow {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-accent-orange);
+      margin-bottom: var(--space-3);
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-4);
+    }
+
+    .cta-text {
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      opacity: 0.8;
+    }
+
+ 
+    @media (max-width: 768px) {
+      .home-hero h1 { font-size: var(--text-2xl); }
+      .home-features { grid-template-columns: 1fr; gap: var(--space-4); }
+    }
+  </style>
+</head>
+<body>
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header"></header>
+
+
+  <!-- ── MAIN ── -->
+  <main>
+    <div class="container">
+
+      <!-- Hero texte -->
+      <section class="home-hero">
+        
+        <h1>Concilier la <em>tradition du livre</em> avec l'innovation des eBooks </h1>
+        <p>Découvrez des livres, partagez vos coups de cœur et contribuez à un catalogue en perpétuelle évolution.</p>
+        <div class="home-ctas">
+          <a href="pages/catalogue.html" class="btn btn-primary">Parcourir le catalogue</a>
+          <a href="pages/publier.html" class="btn btn-secondary">Publier un livre</a>
+        </div>
+      </section>
+
+      <div class="home-divider"></div>
+
+
+      <!-- ── QUI SOMMES-NOUS ── -->
+      <section class="section-about" aria-labelledby="about-heading">
+        <div class="about-content">
+          <span class="about-label">Qui sommes-nous ?</span>
+          <h2 class="about-title" id="about-heading">
+            Une maison d'édition <span>papier & numérique</span>
+          </h2>
+          <div class="about-text">
+            <p>IS Edition est une maison d'édition papier et numérique à compte d'éditeur, créée en 2012 et basée à Marseille. Nos passions ? La littérature, les écrivains et les livres engagés, mais aussi les nouvelles technologies liées au numérique.</p>
+            <p>Les formats "Livre imprimé" et "eBook" étant complémentaires, nous avons donc choisi de concilier le plaisir de l'édition papier avec la praticité de l'édition numérique pour offrir le meilleur des deux mondes à nos lecteurs !</p>
+          </div>
+        </div>
+  
+      </section>
+
+      <!-- CTA -->
+      <section class="home-cta-section" aria-labelledby="cta-heading">
+        <div class="cta-card cta-card--blue">
+          <div class="cta-card-content">
+            <span class="cta-eyebrow">Vous êtes auteur ?</span>
+            <h2 class="cta-title" id="cta-heading">Publiez votre livre</h2>
+            <p class="cta-text">Ajoutez votre livre au catalogue en quelques minutes. Renseignez le titre, l'auteur, la couverture et une description.</p>
+          </div>
+          <a href="pages/publier.html" class="btn btn-orange">Publier un livre</a>
+        </div>
+
+        <div class="cta-card cta-card--dark">
+          <div class="cta-card-content">
+            <span class="cta-eyebrow">Nouveau sur IS Edition ?</span>
+            <h2 class="cta-title">Comment ça marche ?</h2>
+            <p class="cta-text">Découvrez comment fonctionne notre catalogue, comment soumettre un livre et ce que nous proposons à nos lecteurs.</p>
+          </div>
+          <a href="pages/comment-ca-marche.html" class="btn btn-secondary">En savoir plus</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer"></footer>
+
+  <!-- Retour en haut -->
+  <button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
