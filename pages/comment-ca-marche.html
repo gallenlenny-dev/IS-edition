@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comment fonctionne le catalogue IS Edition — guide d'utilisation">
+  <title>IS EDITION — Comment ça marche ?</title>
+  <link rel="icon" type="image/png" href="../icon/is-edition-favicon-114x114.ico">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+
+    /* ── EN-TÊTE DE PAGE ── */
+    .page-header {
+      padding-block: var(--space-16) var(--space-10);
+      text-align: center;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
+    .page-header .page-eyebrow {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-accent-orange);
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--color-text-primary);
+      letter-spacing: var(--tracking-tight);
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-4);
+    }
+
+    .page-header p {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* ── ÉTAPES ── */
+    .steps {
+      padding-block: var(--space-16);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-16);
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+
+    .step.reverse {
+      direction: rtl;
+    }
+
+    .step.reverse > * {
+      direction: ltr;
+    }
+
+    .step-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: var(--font-bold);
+      color: var(--color-accent-orange);
+      opacity: 0.25;
+      line-height: 1;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      color: var(--color-text-primary);
+      letter-spacing: var(--tracking-tight);
+      line-height: var(--leading-tight);
+    }
+
+    .step-title span {
+      color: var(--color-accent-blue);
+    }
+
+    .step-text {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    .step-cta {
+      margin-top: var(--space-2);
+    }
+
+    /* Cadre image */
+    .step-visual {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      background-color: var(--color-bg-secondary);
+      border: var(--border-thin);
+    }
+
+    .step-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Séparateur */
+    .step-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-accent-blue), var(--color-accent-orange));
+      border-radius: var(--radius-full);
+      margin-inline: auto;
+    }
+
+    /* ── CTA FINAL ── */
+    .final-cta {
+      text-align: center;
+      padding-block: var(--space-16) var(--space-24);
+      border-top: var(--border-thin);
+    }
+
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      color: var(--color-text-primary);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-4);
+    }
+
+    .final-cta p {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-8);
+    }
+
+    .final-cta-btns {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .step, .step.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+      .step-number {
+        font-size: var(--text-2xl);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header injecté par components.js -->
+  <header class="site-header"></header>
+
+  <main>
+    <div class="container">
+
+      <!-- En-tête -->
+      <header class="page-header">
+        <span class="page-eyebrow">Guide d'utilisation</span>
+        <h1>Comment ça marche ?</h1>
+        <p>Ajouter un livre au catalogue IS Edition est simple et rapide. Suivez ces quelques étapes.</p>
+      </header>
+
+      <div class="step-divider"></div>
+
+      <!-- Étapes -->
+      <div class="steps">
+
+        <!-- Étape 1 -->
+        <div class="step">
+          <div class="step-content">
+            <span class="step-number">01</span>
+            <h2 class="step-title">Accédez au <span>formulaire</span> de publication</h2>
+            <p class="step-text">Depuis n'importe quelle page du site, cliquez sur le bouton <strong>Publier</strong> dans la navigation. Vous arriverez sur le formulaire de publication, vide et prêt à être rempli.</p>
+            <div class="step-cta">
+              <a href="publier.html" class="btn btn-primary">Accéder au formulaire</a>
+            </div>
+          </div>
+          <div class="step-visual">
+            <img src="../assets/tuto-01.png" alt="Formulaire de publication vide">
+          </div>
+        </div>
+
+        <div class="step-divider"></div>
+
+        <!-- Étape 2 -->
+        <div class="step reverse">
+          <div class="step-content">
+            <span class="step-number">02</span>
+            <h2 class="step-title">Remplissez les <span>informations</span> du livre</h2>
+            <p class="step-text">Saisissez le titre, le prénom et nom de l'auteur, la date de publication et une description. Un aperçu de la carte se met à jour en temps réel sur la droite au fur et à mesure que vous tapez.</p>
+          </div>
+          <div class="step-visual">
+            <img src="../assets/tuto-02.png" alt="Formulaire rempli avec aperçu en temps réel">
+          </div>
+        </div>
+
+        <div class="step-divider"></div>
+
+        <!-- Étape 3 -->
+        <div class="step">
+          <div class="step-content">
+            <span class="step-number">03</span>
+            <h2 class="step-title">Ajoutez la <span>couverture</span></h2>
+            <p class="step-text">Cliquez sur la zone d'upload ou glissez-déposez une image directement. Les formats acceptés sont JPG, PNG et WebP. L'aperçu se met à jour instantanément avec votre couverture. Si vous n'avez pas ajouter d'image, une couverture se créer automatiquement. </p>
+          </div>
+          <div class="step-visual">
+            <img src="../assets/tuto-03.png" alt="Formulaire avec couverture ajoutée">
+          </div>
+        </div>
+
+        <div class="step-divider"></div>
+
+        <!-- Étape 4 -->
+        <div class="step reverse">
+          <div class="step-content">
+            <span class="step-number">04</span>
+            <h2 class="step-title">Le livre apparaît dans le <span>catalogue</span></h2>
+            <p class="step-text">Une fois publié, votre livre est immédiatement visible dans le catalogue. Il apparaît en tête de liste dans la section <strong>Livres récents</strong> et dans la grille complète.</p>
+            <div class="step-cta">
+              <a href="catalogue.html" class="btn btn-secondary">Voir le catalogue</a>
+            </div>
+          </div>
+          <div class="step-visual">
+            <img src="../assets/tuto-04.png" alt="Livre affiché dans le catalogue">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA final -->
+      <div class="final-cta">
+        <h2>Prêt à ajouter votre livre ?</h2>
+        <p>Le formulaire de publication est accessible à tout moment depuis la navigation.</p>
+        <div class="final-cta-btns">
+          <a href="publier.html" class="btn btn-primary">Publier un livre</a>
+          <a href="catalogue.html" class="btn btn-secondary">Voir le catalogue</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer injecté par components.js -->
+  <footer class="site-footer"></footer>
+
+  <button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
