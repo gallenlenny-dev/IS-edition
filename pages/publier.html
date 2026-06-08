@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maison d'édition Marseille">
+  <title>IS EDITION — Publier un livre</title>
+  <link rel="icon" type="image/png" href="../icon/is-edition-favicon-114x114.ico">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/formulaire.css">
+</head>
+<body>
+
+  <!-- Header injecté par components.js -->
+  <header class="site-header"></header>
+
+  <!-- ── MAIN ── -->
+  <main>
+    <div class="container">
+
+      <!-- En-tête de page -->
+      <header class="page-header">
+        <span class="page-eyebrow">Contribution</span>
+        <h1>Publier un livre</h1>
+        <p>Renseignez les informations du livre. Un aperçu se met à jour en temps réel à droite du formulaire.</p>
+      </header>
+
+      <!-- Layout formulaire + aperçu -->
+      <div class="form-layout">
+
+        <!-- ── Formulaire ── -->
+        <form class="publish-form" id="publish-form" novalidate>
+
+          <!-- Couverture -->
+          <div class="form-group">
+            <label class="form-label" for="cover-input">
+              Couverture
+            </label>
+            <span class="form-hint">JPG, PNG ou WebP — recommandé : ratio 2:3 (ex. 400×600 px)</span>
+
+            <!-- Zone d'upload -->
+            <div class="cover-upload-zone" id="cover-upload-zone" role="button" tabindex="0" aria-label="Cliquez ou déposez une image">
+              <input type="file" id="cover-input" accept="image/*" aria-label="Choisir une image de couverture">
+              <span class="upload-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+              </span>
+              <span class="upload-label">Cliquez ou glissez une image</span>
+              <span class="upload-sublabel">Taille max recommandée : 2 Mo</span>
+            </div>
+
+            <!-- Prévisualisation -->
+            <div class="cover-preview" id="cover-preview">
+              <img id="cover-preview-img" src="" alt="Aperçu couverture">
+              <button type="button" class="cover-preview-remove" id="cover-remove" aria-label="Supprimer la couverture">
+                ✕
+              </button>
+            </div>
+          </div>
+
+          <!-- Titre -->
+          <div class="form-group">
+            <label class="form-label" for="titre">
+              Titre du livre <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="form-input"
+              type="text"
+              id="titre"
+              name="titre"
+              placeholder="ex. Les Misérables"
+              autocomplete="off"
+              aria-required="true"
+            >
+            <span class="form-error-msg" id="titre-error" role="alert"></span>
+          </div>
+
+          <!-- Auteur (prénom + nom) -->
+          <div class="form-group">
+            <span class="form-label">
+              Auteur <span class="required" aria-hidden="true">*</span>
+            </span>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="auteur_prenom" style="font-weight:var(--font-regular)">Prénom</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="auteur_prenom"
+                  name="auteur_prenom"
+                  placeholder="ex. Victor"
+                  autocomplete="given-name"
+                  aria-required="true"
+                >
+                <span class="form-error-msg" id="auteur_prenom-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="auteur_nom" style="font-weight:var(--font-regular)">Nom</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="auteur_nom"
+                  name="auteur_nom"
+                  placeholder="ex. Hugo"
+                  autocomplete="family-name"
+                  aria-required="true"
+                >
+                <span class="form-error-msg" id="auteur_nom-error" role="alert"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Date de publication -->
+          <div class="form-group">
+            <label class="form-label" for="date_publication">
+              Date de publication <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="form-input"
+              type="date"
+              id="date_publication"
+              name="date_publication"
+              aria-required="true"
+            >
+            <span class="form-error-msg" id="date_publication-error" role="alert"></span>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label" for="description">
+              Description <span class="required" aria-hidden="true">*</span>
+            </label>
+            <span class="form-hint">Résumé ou présentation du livre — minimum 20 caractères</span>
+            <textarea
+              class="form-textarea"
+              id="description"
+              name="description"
+              placeholder="Décrivez le livre en quelques phrases…"
+              rows="5"
+              aria-required="true"
+            ></textarea>
+            <span class="form-error-msg" id="description-error" role="alert"></span>
+          </div>
+
+          <!-- Actions -->
+          <div class="form-submit-wrap">
+            <button type="button" class="form-reset-link" id="form-reset">
+              Tout effacer
+            </button>
+            <button type="submit" class="btn-submit">
+              Publier le livre
+            </button>
+          </div>
+
+          <!-- Export JSON (pour récupérer les données en vue d'un commit) -->
+          <div style="margin-top:var(--space-4); padding-top:var(--space-4); border-top:var(--border-thin);">
+            <button type="button" id="export-json" class="btn btn-secondary" style="font-size:var(--text-xs);">
+              ↓ Exporter mes livres (JSON)
+            </button>
+            <p style="margin-top:var(--space-2); font-size:var(--text-xs); color:var(--color-text-muted); line-height:var(--leading-relaxed);">
+              Les livres publiés sont sauvegardés localement dans votre navigateur.<br>
+              Exportez ce fichier et placez son contenu dans <code>data/livres.json</code> pour une persistance permanente.
+            </p>
+          </div>
+
+        </form>
+
+        <!-- ── Panneau aperçu ── -->
+        <aside class="preview-panel" aria-label="Aperçu de la carte livre">
+          <p class="preview-title">Aperçu de la carte</p>
+
+          <div class="preview-card">
+            <!-- Couverture aperçu -->
+            <div class="preview-cover">
+              <img id="preview-cover-img" src="" alt="" style="display:none;">
+              <div class="preview-cover-placeholder" id="preview-cover-placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span>Couverture</span>
+              </div>
+            </div>
+
+            <!-- Infos aperçu -->
+            <div class="preview-body">
+              <h3 class="preview-book-title preview-placeholder-text" id="preview-title">Titre du livre</h3>
+              <p class="preview-book-author preview-placeholder-text" id="preview-author">Prénom Nom</p>
+              <p class="preview-book-desc preview-placeholder-text" id="preview-desc">La description du livre apparaîtra ici…</p>
+              <p class="preview-book-date preview-placeholder-text" id="preview-date">Date de publication</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer injecté par components.js -->
+  <footer class="site-footer"></footer>
+
+  <!-- Toast confirmation -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toast-msg">Livre enregistré !</span>
+  </div>
+
+  <!-- Retour en haut -->
+  <button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/formulaire.js"></script>
+</body>
+</html>

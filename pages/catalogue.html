@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maison d'édition Marseille">
+  <title>IS EDITION — Catalogue</title>
+  <link rel="icon" type="image/png" href="../icon/is-edition-favicon-114x114.ico">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/catalogue.css"
+</head>
+<body>
+
+  <!-- Header injecté par components.js -->
+  <header class="site-header"></header>
+
+  <!-- ── MAIN ── -->
+  <main>
+
+    <!-- Hero Carrousel -->
+    <section class="hero-carousel" aria-label="Sélection à la une">
+      <div class="carousel-track">
+
+        <!-- Slide 1 — vierge, à personnaliser -->
+        <div class="carousel-slide active" aria-hidden="true">
+          <div class="carousel-content">
+            <h2 class="slide-title">Nos publications</h2>
+            <p class="slide-subtitle">Commandez chez notre libraire ou sur notre site !</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 — vierge -->
+        <div class="carousel-slide" aria-hidden="true">
+          <div class="carousel-content">
+            <h2 class="slide-title">Publiez votre livre</h2>
+            <p class="slide-subtitle">Au format papier ou numérique</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 — vierge -->
+        <div class="carousel-slide" aria-hidden="true">
+          <div class="carousel-content">
+            <h2 class="slide-title">Libres d'écrire </h2>
+            <p class="slide-subtitle">Volez de vos propres ailes avec l'auto-édition !</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Flèches de navigation -->
+      <button class="carousel-arrow prev" aria-label="Slide précédente">&#8592;</button>
+      <button class="carousel-arrow next" aria-label="Slide suivante">&#8594;</button>
+
+      <!-- Points -->
+      <div class="carousel-controls" role="tablist" aria-label="Navigation carrousel">
+        <button class="carousel-dot active" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+        <button class="carousel-dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+        <button class="carousel-dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+      </div>
+    </section>
+
+    <!-- ── Section livres récents ── -->
+    <section class="section-recents" aria-labelledby="recents-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="recents-heading">Livres <span>récents</span></h2>
+          <a href="#catalogue-section" class="section-link">
+            Voir tout
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Grille remplie par catalogue.js -->
+        <div class="recents-grid" id="recents-grid" role="list" aria-live="polite">
+          <!-- Chargement... -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Section catalogue complet ── -->
+    <section class="section-catalogue" id="catalogue-section" aria-labelledby="catalogue-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="catalogue-heading">Tous les <span>livres</span></h2>
+          <a href="publier.html" class="section-link">
+            + Ajouter
+          </a>
+        </div>
+
+        <!-- Grille remplie par catalogue.js -->
+        <div class="catalogue-grid" id="catalogue-grid" role="list" aria-live="polite">
+          <!-- Skeletons puis cartes -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer injecté par components.js -->
+  <footer class="site-footer"></footer>
+
+  <!-- Retour en haut -->
+  <button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/catalogue.js"></script>
+</body>
+</html>
