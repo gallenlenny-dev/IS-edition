@@ -1,0 +1,201 @@
+/*
+=============================================================
+  TOKENS.CSS — Dictionnaire de style du site
+  Toutes les valeurs de design sont définies ici.
+  Ne jamais écrire de couleur ou taille "en dur" ailleurs.
+=============================================================
+
+  TABLE DES MATIÈRES
+  ------------------
+  1. Couleurs
+  2. Typographie
+  3. Espacements
+  4. Bordures & Rayons
+  5. Ombres
+  6. Z-index
+  7. Transitions & Animations
+  8. Breakpoints (en commentaire, pour référence JS)
+
+=============================================================
+*/
+
+:root {
+
+  /* ─────────────────────────────────────────
+     1. COULEURS
+  ───────────────────────────────────────── */
+
+  /* Fonds */
+  --color-bg-primary:       #F5F2EC;   /* blanc cassé chaud — fond général */
+  --color-bg-secondary:     #EDEAE3;   /* légèrement plus sombre — cartes, sections */
+  --color-bg-dark:          #1A1D24;   /* noir bleuté — footer, hero overlay */
+  --color-bg-surface:       #2C2F3A;   /* ardoise — éléments en relief sur fond sombre */
+
+  /* Textes */
+  --color-text-primary:     #1A1D24;   /* noir bleuté — corps de texte */
+  --color-text-secondary:   #4A4E5A;   /* gris ardoise — sous-titres, métadonnées */
+  --color-text-muted:       #8A8E9A;   /* gris clair — placeholders, labels discrets */
+  --color-text-inverted:    #F5F2EC;   /* blanc cassé — texte sur fond sombre */
+
+  /* Accents */
+  --color-accent-blue:      #1B3A5C;   /* bleu foncé — CTA principal, liens actifs */
+  --color-accent-blue-hover:#142D47;   /* bleu plus foncé — hover sur accent bleu */
+  --color-accent-orange:    #C45E1A;   /* orange brûlé — tag, badge, mise en valeur */
+  --color-accent-orange-hover: #A34E15;/* orange foncé — hover sur accent orange */
+
+  /* Bordures */
+  --color-border:           #D8D4CB;   /* séparateurs, contours de champs */
+  --color-border-focus:     #1B3A5C;   /* focus des inputs */
+
+  /* États */
+  --color-success:          #2D6A4F;
+  --color-error:            #C0392B;
+
+
+  /* ─────────────────────────────────────────
+     2. TYPOGRAPHIE
+  ───────────────────────────────────────── */
+
+  /* Familles */
+  --font-display:   'Playfair Display', Georgia, serif;   /* titres, hero */
+  --font-body:      'Lora', Georgia, serif;               /* corps de texte */
+  --font-ui:        'DM Sans', Helvetica, sans-serif;     /* navigation, boutons, labels */
+
+  /* Tailles — échelle modulaire (ratio 1.25) */
+  --text-xs:    0.64rem;    /*  ~10px */
+  --text-sm:    0.8rem;     /*  ~13px */
+  --text-base:  1rem;       /*  ~16px */
+  --text-md:    1.25rem;    /*  ~20px */
+  --text-lg:    1.563rem;   /*  ~25px */
+  --text-xl:    1.953rem;   /*  ~31px */
+  --text-2xl:   2.441rem;   /*  ~39px */
+  --text-3xl:   3.052rem;   /*  ~49px */
+  --text-4xl:   3.815rem;   /*  ~61px */
+
+  /* Graisses */
+  --font-regular:   400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+
+  /* Hauteurs de ligne */
+  --leading-tight:   1.2;
+  --leading-snug:    1.4;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.8;
+
+  /* Espacement entre lettres */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+
+
+  /* ─────────────────────────────────────────
+     3. ESPACEMENTS
+  ───────────────────────────────────────── */
+
+  --space-1:    0.25rem;   /*  4px */
+  --space-2:    0.5rem;    /*  8px */
+  --space-3:    0.75rem;   /* 12px */
+  --space-4:    1rem;      /* 16px */
+  --space-5:    1.25rem;   /* 20px */
+  --space-6:    1.5rem;    /* 24px */
+  --space-8:    2rem;      /* 32px */
+  --space-10:   2.5rem;    /* 40px */
+  --space-12:   3rem;      /* 48px */
+  --space-16:   4rem;      /* 64px */
+  --space-20:   5rem;      /* 80px */
+  --space-24:   6rem;      /* 96px */
+
+  /* Conteneur max */
+  --container-sm:   640px;
+  --container-md:   768px;
+  --container-lg:   1024px;
+  --container-xl:   1280px;
+
+
+  /* ─────────────────────────────────────────
+     4. BORDURES & RAYONS
+  ───────────────────────────────────────── */
+
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  --border-thin:   1px solid var(--color-border);
+  --border-medium: 2px solid var(--color-border);
+  --border-accent: 2px solid var(--color-accent-blue);
+
+
+  /* ─────────────────────────────────────────
+     5. OMBRES
+  ───────────────────────────────────────── */
+
+  --shadow-sm:   0 1px 3px rgba(26, 29, 36, 0.08);
+  --shadow-md:   0 4px 12px rgba(26, 29, 36, 0.12);
+  --shadow-lg:   0 8px 24px rgba(26, 29, 36, 0.16);
+  --shadow-xl:   0 16px 48px rgba(26, 29, 36, 0.20);
+  --shadow-card: 0 2px 8px rgba(26, 29, 36, 0.10), 0 1px 2px rgba(26, 29, 36, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(26, 29, 36, 0.18), 0 2px 6px rgba(26, 29, 36, 0.08);
+
+
+  /* ─────────────────────────────────────────
+     6. Z-INDEX
+  ───────────────────────────────────────── */
+
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+
+  /* ─────────────────────────────────────────
+     7. TRANSITIONS & ANIMATIONS
+  ───────────────────────────────────────── */
+
+  /* Durées */
+  --duration-fast:    150ms;
+  --duration-normal:  250ms;
+  --duration-slow:    400ms;
+  --duration-slower:  600ms;
+  --duration-carousel: 700ms;
+
+  /* Easings */
+  --ease-default:  cubic-bezier(0.4, 0, 0.2, 1);   /* standard Material */
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1); /* légère élasticité */
+  --ease-smooth:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Transitions composées (à appliquer via transition: var(--t-xxx)) */
+  --t-colors:    color var(--duration-normal) var(--ease-default),
+                 background-color var(--duration-normal) var(--ease-default),
+                 border-color var(--duration-normal) var(--ease-default);
+
+  --t-transform: transform var(--duration-normal) var(--ease-spring);
+
+  --t-shadow:    box-shadow var(--duration-normal) var(--ease-default);
+
+  --t-card:      transform var(--duration-normal) var(--ease-spring),
+                 box-shadow var(--duration-normal) var(--ease-default);
+
+  --t-all:       all var(--duration-normal) var(--ease-default);
+
+  --t-carousel:  transform var(--duration-carousel) var(--ease-smooth);
+}
+
+
+/*
+  BREAKPOINTS (référence, à utiliser dans les media queries)
+  ----------------------------------------------------------
+  Mobile       : < 640px
+  Tablette     : 640px – 1023px
+  Desktop      : ≥ 1024px
+  Large        : ≥ 1280px
+*/
